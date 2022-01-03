@@ -15,7 +15,7 @@ export class ToysService {
    * Executes remote call and returns an Observable so the caller can subscribe to the result
    */
    public getData():Observable<any> {
-    let fullApiUrl = `https://e2u4zw2gvb.execute-api.us-east-2.amazonaws.com/Prod/cardSim/c1ffc78c-2d69-47fb-9644-39b499110fa1`;
+    let fullApiUrl = `https://2nif3zuj43.execute-api.us-east-2.amazonaws.com/default/toys1`;
 
     /*const httpOptions = {
       headers: new HttpHeaders({

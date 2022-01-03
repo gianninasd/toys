@@ -8,6 +8,9 @@ import { ToysService } from '../toys.service';
 })
 export class ListComponent implements OnInit {
 
+  // component fields
+  records = [];
+
   constructor( private toysService:ToysService ) {
 
   }
@@ -21,8 +24,7 @@ export class ListComponent implements OnInit {
 
   // handle result of load remote call
   handleDataResponse( result:any ) {
-    //this.appData.provincesCA = result.provincesCA;
-    //this.appData.provincesUS = result.provincesUS;
+    this.records = result;
     console.log('result: ' + result);
   }
 
