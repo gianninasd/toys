@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ToysService } from '../toys.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class ListComponent implements OnInit {
   // component fields
   records = [];
 
-  constructor( private toysService:ToysService ) {
+  constructor( private router:Router, private toysService:ToysService ) {
 
   }
 
@@ -26,6 +27,11 @@ export class ListComponent implements OnInit {
   handleDataResponse( result:any ) {
     this.records = result;
     console.log('result: ' + result);
+  }
+
+  // display the member details
+  show( member:any ) {
+    this.router.navigate(["detail"], {queryParams: {"id": member.id}});
   }
 
 }
