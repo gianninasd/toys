@@ -1,11 +1,8 @@
-<div class="alert alert-success" role="alert">
-    
-</div>
-
 <table class="table table-hover">
 <thead> 
     <tr>
-        <th scope="col">#</th>
+        <th scope="col">Model</th>
+        <th scope="col">Theme</th>
         <th scope="col">Item</th>
         <th scope="col">Pieces</th>
         <th scope="col">Year</th>
@@ -13,7 +10,8 @@
 </thead>
 <tbody>
     <tr *ngFor="let rec of records" (click)="show(rec)" style="cursor: pointer;">
-        <th scope="row">{{rec.id}}</th>
+        <th scope="row">{{rec.model}}</th>
+        <td>{{rec.theme}}</td>
         <td>{{rec.name}}</td>
         <td>{{rec.pieces}}</td>
         <td>{{rec.purchaseYear}}</td>
