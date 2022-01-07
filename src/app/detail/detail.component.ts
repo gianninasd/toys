@@ -29,6 +29,16 @@ export class DetailComponent implements OnInit {
     });
   }
 
+  // handle form submission
+  onSubmit(form: FormGroup) {
+    console.info(`Update toy ${this.myForm.value.id}`);
+
+    /*this.membersService.update(this.myForm.value, this.appData.user.loginName).subscribe(
+      result => { this.handleUpdateResponse(result) },
+      error => { this.handleUpdateResponse(error.error) }
+    );*/
+  }
+
   // return to list page
   showList():void {
     this.router.navigate(["list"]);
