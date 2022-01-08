@@ -13,9 +13,11 @@
             <div class="mb-3">
                 <label for="theme" class="form-label">Theme</label>
                 <select formControlName="theme" class="form-select">
-                    <option value="MR">Mr.</option>
-                    <option value="MRS">Mrs.</option>
-                    <option value="MS">Ms.</option>
+                    <option value="City">City</option>
+                    <option value="Duplo">Duplo</option>
+                    <option value="Ideas">Ideas</option>
+                    <option value="Star Wars">Star Wars</option>
+                    <option value="Technic">Technic</option>
                 </select>
                 <div class="invalid-feedback"></div>
             </div>
@@ -42,6 +44,12 @@
                 <label for="purchaseYear" class="form-label">Year <span style="margin-left: 5px; font-weight: bold;">*</span></label>
                 <input formControlName="purchaseYear" class="form-control" [ngClass]="fieldErrors['purchaseYear']? 'is-invalid': ''">
                 <div class="invalid-feedback">{{fieldErrors['purchaseYear']}}</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="location" class="form-label">Year <span style="margin-left: 5px; font-weight: bold;">*</span></label>
+                <input formControlName="location" class="form-control" [ngClass]="fieldErrors['location']? 'is-invalid': ''">
+                <div class="invalid-feedback">{{fieldErrors['location']}}</div>
             </div>
 
             <div class="d-grid gap-2 d-md-block">

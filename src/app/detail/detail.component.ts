@@ -19,14 +19,20 @@ export class DetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.toy = JSON.parse(sessionStorage.getItem('toy'));
+    console.log(`Current toy: ${this.toy.model}`);
+
     this.myForm = this.fb.group({
       id: '',
       model: '',
       name: '',
       theme: '',
       pieces: 0,
-      purchaseYear: 0
+      purchaseYear: 0,
+      location: ''
     });
+
+    this.myForm.setValue(this.toy);
   }
 
   // handle form submission

@@ -29,9 +29,10 @@ export class ListComponent implements OnInit {
     console.log('result: ' + result);
   }
 
-  // display the member details
-  show( member:any ) {
-    this.router.navigate(["detail"], {queryParams: {"id": member.id}});
+  // display the toy details
+  show( toy:any ) {
+    sessionStorage.setItem('toy',JSON.stringify(toy));
+    this.router.navigate(["detail"], {queryParams: {"id": toy.id}});
   }
 
 }
