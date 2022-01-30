@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToysService } from '../toys.service';
 
 @Component({
   selector: 'app-detail',
@@ -14,7 +15,7 @@ export class DetailComponent implements OnInit {
   fieldErrors = [];
   toy:any = {};
 
-  constructor( private fb:FormBuilder, private router:Router ) {
+  constructor( private fb:FormBuilder, private router:Router, private service:ToysService ) {
 
   }
 
@@ -39,10 +40,29 @@ export class DetailComponent implements OnInit {
   onSubmit(form: FormGroup) {
     console.info(`Update toy ${this.myForm.value.id}`);
 
-    /*this.membersService.update(this.myForm.value, this.appData.user.loginName).subscribe(
+    this.service.update(this.myForm.value).subscribe(
       result => { this.handleUpdateResponse(result) },
       error => { this.handleUpdateResponse(error.error) }
-    );*/
+    );
+  }
+
+  // reset all field validation error messages and highlights
+  private resetErrors() {
+    this.fieldErrors = [];
+  }
+
+  // handle result of update operation
+  handleUpdateResponse(result: any) {
+    this.resetErrors();
+
+    if (result.status == "FAILED") {
+      console.info(`Fields have errors!`);
+      this.fieldErrors = result.errors;
+    }
+    else {
+      // on success, show the listing screen
+      this.router.navigate(["list"], { queryParams: { "showToast": "true" } });
+    }
   }
 
   // return to list page

@@ -19,14 +19,16 @@ export class ListComponent implements OnInit {
   ngOnInit(): void {
     this.toysService.getData().subscribe( 
       result => {this.handleDataResponse(result)},
-      error => {console.log('result: ' + error)}
+      error => {console.log('error result: ' + error)}
     );
   }
 
   // handle result of load remote call
   handleDataResponse( result:any ) {
-    this.records = result;
-    console.log('result: ' + result);
+    this.records = JSON.parse(result).body;
+    console.log('result1: ' + result);
+    console.log('result2: ' + result.statusCode);
+    console.log('result3: ' + result.body);
   }
 
   // display the toy details
@@ -34,5 +36,4 @@ export class ListComponent implements OnInit {
     sessionStorage.setItem('toy',JSON.stringify(toy));
     this.router.navigate(["detail"], {queryParams: {"id": toy.id}});
   }
-
 }
