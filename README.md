@@ -30,3 +30,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 * https://levelup.gitconnected.com/learn-how-to-create-and-deploy-the-angular-application-to-aws-serverless-s3-81f8a838b563
 * https://www.c-sharpcorner.com/article/add-bootstrap-5-in-angular-11/
 * https://docs.aws.amazon.com/lambda/latest/dg/python-handler.html
+* https://stackoverflow.com/questions/42531643/amazon-s3-static-web-hosting-caching
