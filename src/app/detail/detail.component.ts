@@ -55,9 +55,9 @@ export class DetailComponent implements OnInit {
   handleUpdateResponse(result: any) {
     this.resetErrors();
 
-    if (result.status == "FAILED") {
+    if (result.statusCode == 400) {
       console.info(`Fields have errors!`);
-      this.fieldErrors = result.errors;
+      this.fieldErrors = result.body;
     }
     else {
       // on success, show the listing screen

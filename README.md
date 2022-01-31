@@ -1,30 +1,32 @@
 # Toys
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.4.
+Angular front-end written in Typescript used to track a list of Lego toys. The server-side APIs are exposed AWS lambda functions.
 
-## Development server
+## Pre-requisites
+* Install NodeJS 14.x
+* Install latest Angular (10+) and Angular CLI
+  * `npm install -g @angular/core@10 @angular/cli@10`
+  * or `npm update -g @angular/core@10 @angular/cli@10`
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Running application
 
-## Code scaffolding
+### Locally
+To launch the application locally:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* When it's the first time, you must first run `npm install`
+* From a console run `ng serve`
+* Open a browser and navigate to http://localhost:4200
 
-## Build
+### Tests
+* From a console run `ng test` to run unit tests
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Production
+To prepare for production, execute the following:
 
-## Running unit tests
+* From a console run `ng build --prod`
+* From the AWS S3 console, upload all the files to the bucket from the `dist` folder
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+_make sure CORS is configured in the API Gateway and the API is re-deployed_
 
 ## References
 * https://levelup.gitconnected.com/learn-how-to-create-and-deploy-the-angular-application-to-aws-serverless-s3-81f8a838b563
