@@ -18,12 +18,11 @@ export class ToysService {
    public getData():Observable<any> {
     let fullApiUrl = `${environment.apiUrl}/default/toys1`;
 
-    const httpOptions = {
+    /*const httpOptions = {
       headers: new HttpHeaders({
-        'Access-Control-Allow-Origin': '*'
-        //'Authorization': 'Bearer ' + this.appData.apiKey
+        'Authorization': 'Bearer ' + this.appData.apiKey
       })
-    };
+    };*/
 
     return this.http.get( fullApiUrl );
   }
@@ -37,14 +36,10 @@ export class ToysService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
-        /*'Access-Control-Allow-Origin': '*'
-        'Authorization': 'Bearer ' + this.appData.apiKey*/
       })
     };
 
-    //form.modifiedBy = user;
-
-    return this.http.post(fullApiUrl, JSON.stringify(toy), httpOptions);
+    return this.http.put(fullApiUrl, JSON.stringify(toy), httpOptions);
   }
 
 }
