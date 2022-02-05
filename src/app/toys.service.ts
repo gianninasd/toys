@@ -42,4 +42,19 @@ export class ToysService {
     return this.http.put(fullApiUrl, JSON.stringify(toy), httpOptions);
   }
 
+  /**
+   * Executes remote call and returns an Observable so the caller can subscribe to the result
+   */
+  public create(toy: any): Observable<any> {
+    const fullApiUrl = `${environment.apiUrl}/default/toys1`;
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+
+    return this.http.post(fullApiUrl, JSON.stringify(toy), httpOptions);
+  }
+
 }

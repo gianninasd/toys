@@ -34,6 +34,11 @@ export class ListComponent implements OnInit {
   // display the toy details
   show( toy:any ) {
     sessionStorage.setItem('toy',JSON.stringify(toy));
-    this.router.navigate(["detail"], {queryParams: {"id": toy.id}});
+    this.router.navigate(["detail"], { queryParams: { "id": toy.id } });
+  }
+
+  // display the details component for item creation
+  showCreate() {
+    this.router.navigate(["detail"], { queryParams: { "id": "" } });
   }
 }
