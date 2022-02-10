@@ -30,19 +30,19 @@
 
             <div class="mb-3">
                 <label for="model" class="form-label">Model <span style="margin-left: 5px; font-weight: bold;">*</span></label>
-                <input formControlName="model" class="form-control" [ngClass]="fieldErrors['model']? 'is-invalid': ''">
+                <input type="number" formControlName="model" class="form-control" [ngClass]="fieldErrors['model']? 'is-invalid': ''">
                 <div class="invalid-feedback">{{fieldErrors['model']}}</div>
             </div>
 
             <div class="mb-3">
                 <label for="pieces" class="form-label">Pieces <span style="margin-left: 5px; font-weight: bold;">*</span></label>
-                <input formControlName="pieces" class="form-control" [ngClass]="fieldErrors['pieces']? 'is-invalid': ''">
+                <input type="number" formControlName="pieces" class="form-control" [ngClass]="fieldErrors['pieces']? 'is-invalid': ''">
                 <div class="invalid-feedback">{{fieldErrors['pieces']}}</div>
             </div>
 
             <div class="mb-3">
                 <label for="purchaseYear" class="form-label">Year <span style="margin-left: 5px; font-weight: bold;">*</span></label>
-                <input formControlName="purchaseYear" class="form-control" [ngClass]="fieldErrors['purchaseYear']? 'is-invalid': ''">
+                <input type="number" formControlName="purchaseYear" class="form-control" [ngClass]="fieldErrors['purchaseYear']? 'is-invalid': ''">
                 <div class="invalid-feedback">{{fieldErrors['purchaseYear']}}</div>
             </div>
 
