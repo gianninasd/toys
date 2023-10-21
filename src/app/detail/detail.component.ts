@@ -30,9 +30,6 @@ export class DetailComponent implements OnInit {
 
     console.log(`idToLoad: ${idToLoad}`);
 
-    this.toy = JSON.parse(sessionStorage.getItem('toy'));
-    console.log(`Current toy: ${this.toy.id}`);
-
     this.myForm = this.fb.group({
       id: '',
       model: '',
@@ -57,6 +54,8 @@ export class DetailComponent implements OnInit {
       this.myForm.setValue(this.toy);
     }
     else {
+      this.toy = JSON.parse(sessionStorage.getItem('toy'));
+      console.log(`Current toy: ${this.toy.id}`);
       this.myForm.setValue(this.toy);
     }
   }

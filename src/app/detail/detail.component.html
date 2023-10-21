@@ -30,7 +30,7 @@
 
             <div class="mb-3">
                 <label for="model" class="form-label">Model <span style="margin-left: 5px; font-weight: bold;">*</span></label>
-                <input type="number" formControlName="model" class="form-control" [ngClass]="fieldErrors['model']? 'is-invalid': ''">
+                <input type="text" formControlName="model" class="form-control" [ngClass]="fieldErrors['model']? 'is-invalid': ''">
                 <div class="invalid-feedback">{{fieldErrors['model']}}</div>
             </div>
 
@@ -48,7 +48,10 @@
 
             <div class="mb-3">
                 <label for="location" class="form-label">Location <span style="margin-left: 5px; font-weight: bold;">*</span></label>
-                <input formControlName="location" class="form-control" [ngClass]="fieldErrors['location']? 'is-invalid': ''">
+                <select formControlName="location" class="form-select" [ngClass]="fieldErrors['location']? 'is-invalid': ''">
+                    <option value="Montreal">Montreal</option>
+                    <option value="Hartford">Hartford</option>
+                </select>
                 <div class="invalid-feedback">{{fieldErrors['location']}}</div>
             </div>
 
